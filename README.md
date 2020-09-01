@@ -118,11 +118,11 @@
 | text              |  text   | null: false                    |
 | postage_payer_id  | integer | null: false, foreign_key: true |
 
-## preparation_day
+## preparation_days
 
 | Column              | Type    | Options                        |
 | ------------------  | ------  | -----------------------------  |
 | title               | string  | null: false                    |
 | text                |  text   | null: false                    |
-| preparation_day_id  | integer | null: false, foreign_key: true |
+| preparation_day_id  | integer | null: false, foreign_key: true |  
 
