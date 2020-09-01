@@ -18,7 +18,6 @@
 | Column            | Type    | Options     |
 | ----------------  | ------  | ----------- |
 | name              | string  | null: false |
-| image             | string  | null: false |
 | introduction      | text    | null: false |
 | category          | string  | null: false |
 | item_condition    | string  | null: false |
