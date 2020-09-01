@@ -22,13 +22,17 @@
 
 ## items テーブル
 
-| Column            | Type    | Options                       |
-| ----------------  | ------  | ----------------------------- |
-| name              | string  | null: false                   |
-| introduction      | text    | null: false                   |
-| price             | integer | null: false                   |
-| image             | string  | null: false                   |
-| user_id           | integer | null: false, foreign_key: true|
+| Column               | Type    | Options                       |
+| ----------------     | ------  | ----------------------------- |
+| name                 | string  | null: false                   |
+| introduction         | text    | null: false                   |
+| price                | integer | null: false                   |
+| image                | string  | null: false                   |
+| category_id          | integer | null: false, foreign_key: true|
+| product_condition_id | integer | null: false, foreign_key: true|
+| postage_payer_id     | integer | null: false, foreign_key: true|
+| preparation_day_id   | integer | null: false, foreign_key: true|
+| user_id              | integer | null: false, foreign_key: true|
 
 ### Association
 
@@ -69,6 +73,7 @@
 | Column            | Type    | Options                        |
 | ----------------  | ------  | -----------------------------  |
 | postal_code       | string  | null: false                    |
+| prefecture_id     | integer | null: false                    |
 | city              | string  | null: false                    |
 | house_number      | string  | null: false                    |
 | building_name     | string  |                                |
@@ -87,7 +92,7 @@
 | ----------------  | ------  | -----------------------------  |
 | title             | string  | null: false                    |
 | text              |  text   | null: false                    |
-| prefecture_id     | integer | null: false                    |
+| prefecture_id     | integer | null: false, foreign_key: true |
 
 ## categories 
 
@@ -95,7 +100,7 @@
 | ----------------  | ------  | -----------------------------  |
 | title             | string  | null: false                    |
 | text              |  text   | null: false                    |
-| category_id       | integer | null: false                    |
+| category_id       | integer | null: false, foreign_key: true |
 
 ## products_condition
 
@@ -103,7 +108,7 @@
 | -------------------  | ------  | -----------------------------  |
 | title                | string  | null: false                    |
 | text                 |  text   | null: false                    |
-| product_condition_id | integer | null: false                    |
+| product_condition_id | integer | null: false, foreign_key: true |
 
 ## postage_payer
 
@@ -111,7 +116,7 @@
 | ----------------  | ------  | -----------------------------  |
 | title             | string  | null: false                    |
 | text              |  text   | null: false                    |
-| postage_payer_id  | integer | null: false                    |
+| postage_payer_id  | integer | null: false, foreign_key: true |
 
 ## preparation_day
 
@@ -119,5 +124,5 @@
 | ------------------  | ------  | -----------------------------  |
 | title               | string  | null: false                    |
 | text                |  text   | null: false                    |
-| preparation_day_id  | integer | null: false                    |
+| preparation_day_id  | integer | null: false, foreign_key: true |
 
