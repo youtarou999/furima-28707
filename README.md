@@ -124,5 +124,5 @@
 | ------------------  | ------  | -----------------------------  |
 | title               | string  | null: false                    |
 | text                |  text   | null: false                    |
-| preparation_day_id  | integer | null: false, foreign_key: true |  
+| preparation_days_id | integer | null: false, foreign_key: true |  
 
