@@ -55,7 +55,6 @@
 ### Association
 
 -has_one :destination
--has_one :credit_card
 
 ## destinations テーブル
 
@@ -73,16 +72,5 @@
 
 -belongs_to :buyer
 
-## credit_cards テーブル
 
-| Column            | Type    | Options                       |
-| ----------------  | ------  | ----------------------------  |
-| card_number       | string  | null: false                   |
-| expiration_day    | string  | null: false                   |
-| security_number   | string  | null: false                   |
-| buyer_id          | string  | null: false, foreign_key: true|
-
-### Association
-
--belongs_to :buyer
 
