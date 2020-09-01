@@ -2,11 +2,16 @@
 
 ## users テーブル
 
-| Column      | Type   | Options     |
-| ----------- | ------ | ----------- |
-| name        | string | null: false |
-| email       | string | null: false |
-| Password    | string | null: false |
+| Column            | Type   | Options     |
+| ----------------  | ------ | ----------- |
+| name              | string | null: false |
+| email     　　　   | string | null: false |
+| Password     　　　| string | null: false |
+| family_name       | string  | null: false |
+| first_name        | string  | null: false |
+| family_name_kana  | string  | null: false |
+| first_name_kana   | string  | null: false |
+| birthday          | string  | null: false |
 
 ### Association
 
@@ -19,11 +24,6 @@
 | ----------------  | ------  | ----------- |
 | name              | string  | null: false |
 | introduction      | text    | null: false |
-| category          | string  | null: false |
-| item_condition    | string  | null: false |
-| postage_payer     | string  | null: false |
-| prefecture_code   | string  | null: false |
-| preparation_day   | string  | null: false |
 | price             | string  | null: false |
 | seller            | string  | null: false |
 
@@ -50,11 +50,7 @@
 
 | Column            | Type    | Options     |
 | ----------------  | ------  | ----------- |
-| family_name       | string  | null: false |
-| first_name        | string  | null: false |
-| family_name_kana  | string  | null: false |
-| first_name_kana   | string  | null: false |
-| birthday          | string  | null: false |
+
 
 ### Association
 
