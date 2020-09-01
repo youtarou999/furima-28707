@@ -31,7 +31,7 @@
 | category_id          | integer | null: false, foreign_key: true|
 | product_condition_id | integer | null: false, foreign_key: true|
 | postage_payer_id     | integer | null: false, foreign_key: true|
-| preparation_day_id   | integer | null: false, foreign_key: true|
+| preparation_days_id  | integer | null: false, foreign_key: true|
 | user_id              | integer | null: false, foreign_key: true|
 
 ### Association
