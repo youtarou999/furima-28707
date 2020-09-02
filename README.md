@@ -27,7 +27,6 @@
 | name                 | string  | null: false                   |
 | introduction         | text    | null: false                   |
 | price                | integer | null: false                   |
-| image                | string  | null: false                   |
 | category_id          | integer | null: false, foreign_key: true|
 | product_condition_id | integer | null: false, foreign_key: true|
 | postage_payer_id     | integer | null: false, foreign_key: true|
@@ -84,45 +83,4 @@
 
 -belongs_to :transaction
 
-<!-- ここからはActiveHash用のテーブルです  -->
-
-## prefectures　
-
-| Column            | Type    | Options                        |
-| ----------------  | ------  | -----------------------------  |
-| title             | string  | null: false                    |
-| text              |  text   | null: false                    |
-| prefecture_id     | integer | null: false, foreign_key: true |
-
-## categories 
-
-| Column            | Type    | Options                        |
-| ----------------  | ------  | -----------------------------  |
-| title             | string  | null: false                    |
-| text              |  text   | null: false                    |
-| category_id       | integer | null: false, foreign_key: true |
-
-## products_condition
-
-| Column               | Type    | Options                        |
-| -------------------  | ------  | -----------------------------  |
-| title                | string  | null: false                    |
-| text                 |  text   | null: false                    |
-| product_condition_id | integer | null: false, foreign_key: true |
-
-## postage_payer
-
-| Column            | Type    | Options                        |
-| ----------------  | ------  | -----------------------------  |
-| title             | string  | null: false                    |
-| text              |  text   | null: false                    |
-| postage_payer_id  | integer | null: false, foreign_key: true |
-
-## preparation_days
-
-| Column              | Type    | Options                        |
-| ------------------  | ------  | -----------------------------  |
-| title               | string  | null: false                    |
-| text                |  text   | null: false                    |
-| preparation_days_id | integer | null: false, foreign_key: true |  
 
