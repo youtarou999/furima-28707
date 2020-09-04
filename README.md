@@ -5,8 +5,8 @@
 | Column            | Type    | Options     |
 | ----------------  | ------  | ----------- |
 | name              | string  | null: false |
-| email     　　　   | string  | null: false |
-| Password     　　　| string  | null: false |
+| email             | string  | null: false |
+| Password          | string  | null: false |
 | family_name       | string  | null: false |
 | first_name        | string  | null: false |
 | family_name_kana  | string  | null: false |
