@@ -6,23 +6,20 @@ class User < ApplicationRecord
   
   has_many :items
 
-  validates :name,                  presence: true
-  validates :email,                 presence: true
-  
-  validates :password,              presence: true, format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: '英字と数字の両方を含めて設定してください'} 
-  validates :password_confirmation, presence: true, format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: '英字と数字の両方を含めて設定してください'} 
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
+  NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/
+  KANA_REGEX = /\A[ァ-ン]+\z/
 
-
-  validates :family_name,           presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]+\z/, message: '全角文字を使用してください'} 
-  validates :first_name,            presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]+\z/, message: '全角文字を使用してください'} 
-
-  
-  validates :family_name_kana,      presence: true, format: {with: /\A[ァ-ン]+\z/, message: '全角カナを使用してください' } 
-  validates :first_name_kana,       presence: true, format: {with: /\A[ァ-ン]+\z/, message: '全角カナを使用してください' }
-  
-
-  validates :birthday,              presence: true
-
-  
+  with_options presence: true do
+    validates :name                  
+    validates :email                
+    validates :password,               format: {with: PASSWORD_REGEX, message: '英字と数字の両方を含めて設定してください'} 
+    validates :password_confirmation,  format: {with: PASSWORD_REGEX, message: '英字と数字の両方を含めて設定してください'} 
+    validates :family_name,            format: {with: NAME_REGEX, message: '全角文字を使用してください'} 
+    validates :first_name,             format: {with: NAME_REGEX, message: '全角文字を使用してください'} 
+    validates :family_name_kana,       format: {with: KANA_REGEX, message: '全角カナを使用してください' } 
+    validates :first_name_kana,        format: {with: KANA_REGEX, message: '全角カナを使用してください' }
+    validates :birthday
+  end
 end
 
