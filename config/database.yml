@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: furima_28707_development
+  database: furima-28707_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: furima_28707_test
+  database: furima-28707_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: furima_28707_production
-  username: furima_28707
+  database: furima-28707_production
+  username: furima-28707
   password: <%= ENV['FURIMA_28707_DATABASE_PASSWORD'] %>

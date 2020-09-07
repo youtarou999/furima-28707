@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
-  def index  # indexアクションを定義した
+  # before_action :authenticate_user!
+
+  def index
   end
+
+
 end
