@@ -2,8 +2,8 @@ class Item < ApplicationRecord
   belongs_to :user
 
   with_options presence: true do
-    validates :name                  
-    validates :introduction                
+    validates :name,                 length: { maximum: 40 }                
+    validates :introduction,         length: { maximum: 1000 }                
     validates :price               
     validates :category_id
     validates :product_condition_id
