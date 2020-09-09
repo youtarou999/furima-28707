@@ -12,6 +12,7 @@ class Item < ApplicationRecord
     validates :postage_payer_id
     validates :preparation_days_id
     validates :user_id
+    validates :prefecture_id
   end
   
     validates_inclusion_of :price, in:300..9999999
