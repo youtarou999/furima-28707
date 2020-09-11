@@ -48,8 +48,13 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Preparation days must be other than 0")
       end
-      it "価格の範囲が￥300~9,999,999の間でないと登録できない" do
+      it "価格が￥300以下だと登録できない" do
         @item.price  = 100
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+      it "価格が￥9,999,999以上だと登録できない" do 
+        @item.price  = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
