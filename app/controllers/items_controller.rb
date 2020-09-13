@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: :index
 
 
   def index
@@ -19,6 +18,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
 
   private
   def item_params
