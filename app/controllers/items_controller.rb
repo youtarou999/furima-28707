@@ -36,6 +36,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      redirect_to action: :index
+    else
+      redirect_to action: :edit
+    end
+  end
+
   private
   def item_params
     params.require(:item).permit(:image, :name, :introduction, :price, :category_id, :prefecture_id,
