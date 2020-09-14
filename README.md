@@ -53,7 +53,7 @@
 -belongs_to :user
 -belongs_to :item
 
-## transactions テーブル
+## orders テーブル
 
 | Column            | Type    | Options                       |
 | ----------------  | ------  | ----------------------------  |
