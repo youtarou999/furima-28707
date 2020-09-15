@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @item = Item.find(params[:id])
     @order = OrderDestination.new
   end
 
