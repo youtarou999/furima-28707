@@ -3,11 +3,11 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.new
+    @order = OrderDestination.new
   end
 
   def create
-    @order = Order.create(order_params)
+    @order = OrderDestination.create(order_params)
     if @order.save
       redirect_to action: :index
    else
@@ -18,6 +18,6 @@ class OrdersController < ApplicationController
   private
 
   def orfer_params
-    params.require(:order).merge(user_id: current_user.id, item_id:current_item.id )
+    params.require(:order_destination).permit(:postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, ).merge(user_id: current_user.id, item_id:current_item.id )
   end
 end
