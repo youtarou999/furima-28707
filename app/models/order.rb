@@ -6,7 +6,4 @@ class Order < ApplicationRecord
   belongs_to :item
   belongs_to_active_hash :prefecture
 
-  attr_accessor :token
-  validates :token, presence: true
-  validates :price, presence: true
 end

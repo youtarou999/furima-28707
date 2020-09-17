@@ -1,8 +1,7 @@
 class OrderDestination
 
   include ActiveModel::Model
-  attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :user_id, :item_id
-  # attr_accessorでitem_idも定義しましょう
+  attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :user_id, :item_id, :authenticity_token, :order_destination, :token
 
   POSTAL_REGEX = /\A\d{3}[-]\d{4}\z/
   PHONE_REGEX  = /\A\d{10,11}\z/
@@ -18,10 +17,9 @@ class OrderDestination
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
-    # order = の形で代入して、Destination.createのところにもorder_id: order.idみたいな形で保存しましょう
 
-    Destination.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number, 
-                                                     building_name: building_name, phone_number: phone_number, order_id: order.id)  
+    Destination.create!(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number, 
+                                                     building_name: building_name, phone_number: phone_number,order_destination: order_destination, order_id: order.id)  
   end
 end
 
