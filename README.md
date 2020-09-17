@@ -18,7 +18,7 @@
 
 -has_many :items
 -has_many :comments
--has_many :transactions
+-has_many :orders
 
 ## items テーブル
 
@@ -37,7 +37,7 @@
 
 -belongs_to :user
 -has_many :comments
--has_one :transaction
+-has_one :order
 
 
 ## comments テーブル
@@ -53,7 +53,7 @@
 -belongs_to :user
 -belongs_to :item
 
-## transactions テーブル
+## orders テーブル
 
 | Column            | Type    | Options                       |
 | ----------------  | ------  | ----------------------------  |
@@ -69,18 +69,19 @@
 
 ## destinations テーブル
 
-| Column            | Type    | Options                        |
-| ----------------  | ------  | -----------------------------  |
-| postal_code       | string  | null: false                    |
-| prefecture_id     | integer | null: false                    |
-| city              | string  | null: false                    |
-| house_number      | string  | null: false                    |
-| building_name     | string  |                                |
-| phone_number      | string  | null: false                    |
-| transaction_id    | integer | null: false, foreign_key: true |
+| Column             | Type    | Options                        |
+| ----------------   | ------  | -----------------------------  |
+| postal_code        | string  | null: false                    |
+| prefecture_id      | integer | null: false                    |
+| city               | string  | null: false                    |
+| house_number       | string  | null: false                    |
+| preparation_days_id| integer | null: false                    |
+| building_name      | string  |                                |
+| phone_number       | string  | null: false                    |
+| order_id           | integer | null: false, foreign_key: true |
 
 ### Association
 
--belongs_to :transaction
+-belongs_to :order
 
 
