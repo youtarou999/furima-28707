@@ -1,7 +1,7 @@
 class OrderDestination
 
   include ActiveModel::Model
-  attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :user_id, :item_id, :authenticity_token, :order_destination, :token
+  attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building_name,:authenticity_token, :phone_number, :user_id, :item_id, :order_destination, :token
 
   POSTAL_REGEX = /\A\d{3}[-]\d{4}\z/
   PHONE_REGEX  = /\A\d{10,11}\z/

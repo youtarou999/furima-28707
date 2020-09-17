@@ -49,6 +49,11 @@ RSpec.describe OrderDestination, type: :model do
         @order_destination.valid?
         expect(@order_destination.errors.full_messages).to include("Phone number can't be blank")
       end
+      it "電話番号9桁以下だと購入できない" do
+        @order_destination.phone_number = 123456789
+        @order_destination.valid?
+        expect(@order_destination.errors.full_messages).to include("Phone number ハイフンなしで10~11桁の数字を入力してください")
+      end
       
     end
   end
