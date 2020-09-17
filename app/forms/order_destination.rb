@@ -10,7 +10,8 @@ class OrderDestination
     validates :postal_code,    format: {with: POSTAL_REGEX, message: 'ハイフンありで7桁の数字を入力してください'}                                             
     validates :city   
     validates :house_number
-    validates :phone_number,   format: {with: PHONE_REGEX, message: 'ハイフンなしで10~11桁の数字を入力してください'}                  
+    validates :phone_number,   format: {with: PHONE_REGEX, message: 'ハイフンなしで10~11桁の数字を入力してください'}  
+    validates :token                
   end
 
     validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
